@@ -767,8 +767,8 @@ function renderWarga(){
   var list=state.warga.slice().sort(function(a,b){ var na=parseInt(a.no,10)||999, nb=parseInt(b.no,10)||999; return na-nb; });
   wrap.innerHTML=list.map(function(w){
     var tags='<span class="tag kat">'+KAT_LABEL[w.kategori]+'</span>'
-      +(w.koperasi?'<span class="tag mem">Koperasi</span>':'<span class="tag no">Non-Kop</span>')
-      +(w.arisan?'<span class="tag mem">Arisan</span>':'<span class="tag no">Non-Arisan</span>');
+      +(w.koperasi?'<span class="tag mem">Koperasi</span>':'<span class="tag no">X</span>')
+      +(w.arisan?'<span class="tag mem">Arisan</span>':'<span class="tag no">X</span>');
     return '<div class="warga-card" data-warga-edit="'+w.id+'"><div class="no">'+escapeHtml(w.no||'·')+'</div><div class="info"><div class="n">'+escapeHtml(w.nama)+'</div><div class="a">'+escapeHtml(w.alamat||'')+'</div><div class="tags">'+tags+'</div></div></div>';
   }).join('');
 }
