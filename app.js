@@ -599,7 +599,7 @@ function pageTali() {
         }
       });
       const pct = target ? Math.round((got / target) * 100) : 0;
-      return `<button class="item" data-act="editkejadian" data-id="${k.id}" style="align-items:flex-start"><div class="avatar ${k.jenis === 'Kematian' ? 'heart' : 'sick'}">${k.jenis === 'Kematian' ? '✝' : '✚'}</div>
+      return `<button class="item" data-act="editkejadian" data-id="${k.id}" style="align-items:flex-start"><div class="avatar ${k.jenis === 'Kematian' ? 'heart' : 'sick'}">${k.jenis === 'Kematian' ? '🎗️' : '✚'}</div>
       <div class="grow"><b>${esc(k.jenis)} – ${esc(k.nama)}</b><small>${tglIndo(k.tanggal)} · ditagih ${periodeLabel(k.periode)}</small>
       <div class="bar blue" style="margin:8px 0 4px"><i style="width:${pct}%"></i></div><small>${rp(got)} / ${rp(target)} · ${n} KK × ${rp(k.nominal)}</small></div>
       <div class="end"><span class="badge ${pct >= 100 ? 'ok' : 'warn'}">${pct}%</span></div></button>`;
