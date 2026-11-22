@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#0a63e8" />
+    <title>Bendahara RT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- LOGIN -->
+    <div id="login" class="login">
+      <form id="loginForm" class="login-card">
+        <div class="logo">RT</div>
+        <h1>Bendahara RT</h1>
+        <p class="muted">Pencatatan iuran warga yang rapi dan mudah</p>
+        <label
+          >PIN Bendahara
+          <input id="pin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Masukkan PIN" />
+        </label>
+        <details id="cfgBox">
+          <summary>Sambungan Google Sheets</summary>
+          <label
+            >URL Web App (Apps Script)
+            <input id="apiurl" type="url" placeholder="https://script.google.com/macros/s/.../exec" />
+          </label>
+          <small class="muted">Kosongkan untuk mencoba <b>mode demo</b> (data tersimpan di browser ini saja).</small>
+        </details>
+        <label class="check"><input id="remember" type="checkbox" checked /> Ingat di perangkat ini</label>
+        <button class="btn primary block" id="loginBtn" type="submit">Masuk</button>
+        <p id="loginErr" class="err" hidden></p>
+      </form>
+    </div>
+
+    <!-- APLIKASI -->
+    <div id="app" hidden>
+      <aside class="side">
+        <div class="brand">
+          <span class="logo sm">RT</span>
+          <div><b>Bendahara RT</b><small id="brandSub"></small></div>
+        </div>
+        <nav id="sideNav"></nav>
+      </aside>
+      <main>
+        <header class="topbar">
+          <h2 id="pageTitle">Beranda</h2>
+          <div class="top-r"><span id="modeTag" class="tag" hidden>Demo</span><button class="icon-btn" id="syncBtn" title="Muat ulang data" data-act="reload"></button></div>
+          <div id="busy" class="busy" hidden></div>
+        </header>
+        <div id="view"></div>
+      </main>
+      <nav class="bottom" id="bottomNav"></nav>
+    </div>
+
+    <div id="modal" class="modal" hidden></div>
+    <div id="toast" class="toast" hidden></div>
+    <div id="printArea"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
