@@ -685,7 +685,7 @@ function pageCetak() {
   return `${pSwitch()}<div class="card">
     <div class="field"><span>Warga yang dicetak</span><select data-bind="ctarget"><option value="all" ${c.target === 'all' ? 'selected' : ''}>Semua warga aktif</option><option value="belum" ${c.target === 'belum' ? 'selected' : ''}>Hanya yang belum lunas / menunggak</option><option value="one" ${c.target === 'one' ? 'selected' : ''}>Satu warga saja</option></select></div>
     ${c.target === 'one' ? `<div class="field"><span>Pilih warga</span><select data-bind="cwid"><option value="">— pilih —</option>${all.map((w) => `<option value="${w.id}" ${c.wid === w.id ? 'selected' : ''}>${esc(w.nama)} – ${esc(w.alamat)}</option>`).join('')}</select></div>` : ''}
-    <div class="field"><span>Ukuran cetak</span><select data-bind="csize"><option value="2" ${c.size === '2' ? 'selected' : ''}>Kertas A4 (2 /hal)</option><option value="1" ${c.size === '1' ? 'selected' : ''}>Kertas A4</option><option value="6" ${c.size === '6' ? 'selected' : ''}>Kertas A6</option></select></div>
+    <div class="field"><span>Ukuran cetak</span><select data-bind="csize"><option value="2" ${c.size === '2' ? 'selected' : ''}>Kertas A4 (2/hal)</option><option value="1" ${c.size === '1' ? 'selected' : ''}>Kertas A4</option><option value="6" ${c.size === '6' ? 'selected' : ''}>Kertas A6</option></select></div>
     <label class="switch">Sertakan tunggakan bulan sebelumnya<input type="checkbox" ${c.ar ? 'checked' : ''} data-bind="car"></label>
     <p class="note" id="cnt">${cetakTargets().length} tagihan akan dicetak untuk ${periodeLabel(S.periode)}.</p>
     <button class="btn primary block" data-act="doprint">${ico('printer')}Cetak / Simpan PDF</button>
